@@ -1,0 +1,32 @@
+RELEASE_INDEX=( -1 -1 0 1 )
+
+MRI="${RELEASE_INDEX[$GA_RELEASE]}"
+
+SOURCES_AUDIT=( 2.3 master )
+SOURCES_SCHEMA=( 2.3 master )
+SOURCES_SECURITY=( 2.3 master )
+
+RELEASE_UUID=( graphaware-uuid-2.3.3.37.8 graphaware-uuid-3.0.4.43.10 ) 
+RELEASE_RECO=( graphaware-reco-2.3.3.37.10 graphaware-reco-3.0.4.43.10 )
+RELEASE_EXPIRY=( graphaware-expire-2.3.3.37.2 graphaware-expire-3.0.4.43.3 )
+RELEASE_TIMETREE=( graphaware-timetree-2.3.3.37.24 graphaware-timetree-3.0.4.43.24 )
+RELEASE_NODERANK=( graphaware-noderank-2.3.3.37.2 graphaware-noderank-3.0.4.43.3 )
+RELEASE_FRAMEWORK=( graphaware-server-enterprise-all-2.3.3.37 graphaware-server-enterprise-all-3.0.4.43 )
+
+VERSION_AUDIT=${SOURCES_AUDIT[$MRI]}
+VERSION_SCHEMA=${SOURCES_SCHEMA[$MRI]}
+VERSION_SECURITY=${SOURCES_SECURITY[$MRI]}
+
+VERSION_UUID=${RELEASE_UUID[$MRI]}
+VERSION_RECO=${RELEASE_RECO[$MRI]}
+VERSION_EXPIRY=${RELEASE_EXPIRY[$MRI]}
+VERSION_TIMETREE=${RELEASE_TIMETREE[$MRI]}
+VERSION_NODERANK=${RELEASE_NODERANK[$MRI]}
+VERSION_FRAMEWORK=${RELEASE_FRAMEWORK[$MRI]}
+
+RELEASED=( $VERSION_UUID "" "" $VERSION_NODERANK $VERSION_RECO $VERSION_EXPIRY $VERSION_TIMETREE "" $VERSION_FRAMEWORK )
+BRANCHES=( "" $VERSION_AUDIT $VERSION_SCHEMA "" "" "" "" $VERSION_SECURITY "" )
+
+PROJECTS=( "uuid" "neo4j-audit" "neo4j-schema" "noderank" "reco" "expire" "timetree" "graphaware-enterprise" "framework-server-enterprise" )
+ARTIFACTS=("" "graphaware-audit" "graphaware-schema" "" "" "" "" "graphaware-enterprise" "" )
+JARFILES=("" '.jar' '.jar' "" "" "" "" '-jar-with-dependencies.jar' "") 
